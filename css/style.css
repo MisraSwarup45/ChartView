@@ -1,0 +1,136 @@
+.background{
+    background-color: #001d3d;
+}
+.font{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    display: flex;
+}
+
+.center {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+.style{
+    color:white; 
+    text-align: center; 
+    font-size:90px;
+    padding-top: 5%;
+}
+.logo{
+    background: url(Bitcoin.png) no-repeat;
+    color: white;
+}
+
+.radius{
+    border-radius: 100%;
+    height: 125px;
+    width: 125px;
+}
+
+.BitcoinImage{
+    padding-left: 15%;
+}
+
+.col{
+    justify-content: center;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.button-72 {
+    align-items: center;
+    background-color: #001d3d;
+    border-radius: 42px;
+    border-width: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    font-family: Josefin Sans,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: .04em;
+    line-height: 16px;
+    margin: 0;
+    padding: 18px 18px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+  }
+  
+  .button-72:hover {
+    background-color: #001d3d;
+    border: 1px solid white;
+  }
+  
+  @media (min-width: 768px) {
+    .button-72 {
+      font-size: 21px;
+      padding: 18px 34px;
+    }
+  }
+
+  .CoinLogo{
+    padding-bottom: 25px;
+  }
+
+.fontPadding{
+    padding-right: 15px;
+}
+
+.button-85 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #003566;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    display: flex;
+  }
+  
+  
+  .button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #003566;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+.ViewChart{
+    padding-top: 100px;
+    justify-content: center;
+    display: flex;
+}
+
+.MiddlePart{
+  align-items: center;
+  justify-content: center;
+}
+
+.image{
+  text-align: center;
+}
+
+/* .style{
+  border: 1px solid white;
+} */
