@@ -1,0 +1,72 @@
+<%- include("header") -%>
+<%- include("navbar") -%>
+  <div
+    style="
+      height: 62px;
+      background-color: #001d3d;
+      overflow: hidden;
+      box-sizing: border-box;
+      border: 1px solid #001d3d;
+      border-radius: 4px;
+      text-align: right;
+      line-height: 14px;
+      block-size: 62px;
+      font-size: 12px;
+      font-feature-settings: normal;
+      text-size-adjust: 100%;
+      box-shadow: inset 0 -20px 0 0 #001d3d;
+      padding: 1px;
+      padding: 0px;
+      margin: 0px;
+      width: 100%;
+    "
+  >
+    <div style="height: 40px; padding: 0px; margin: 0px; width: 100%">
+      <iframe
+        src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover="
+        width="100%"
+        height="36px"
+        scrolling="none"
+        marginwidth="0"
+        marginheight="0"
+        frameborder="0"
+        border="0"
+        style="border: 0; margin: 0; padding: 0"
+      ></iframe>
+    </div>
+  </div>
+  <div id="image">
+    <img src="ChartView.png" class="center" alt="Logo" />
+  </div>
+
+  
+  <table class="image container">
+    <tr>
+      <th> 
+        <input type="image" src="Bitcoin.png" class="radius" name="bitcoin" alt="crypto" onclick="window.location.href='bitcoin'"/>
+      </th>
+      <th>
+        <input type="image" src="Etherium.png" class="radius" name="etherium" alt="crypto" onclick="window.location.href='etherium'" />
+      </th>
+      <th>
+        <input type="image" src="Tether.png" class="radius" name="tether" alt="crypto" onclick="window.location.href='tether'" />
+      </th>
+      <th>
+        <input type="image" src="Binance.png" class="radius" name="binance" alt="crypto" onclick="window.location.href='binance'" />
+      </th>
+    </tr>
+    <tr>
+      <td class="col"><h3>Bitcoin</h3></td>
+      <td class="col"><h3>Etherium</h3></td>
+      <td class="col"><h3>Tether</h3></td>
+      <td class="col"><h3>Binance</h3></td>
+    </tr>
+  </table>
+  <div class="ViewChart">
+    <button class="button-85 font" role="button">View Chart</button>
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+<%- include("footer") -%>
