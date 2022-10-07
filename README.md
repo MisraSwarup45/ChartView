@@ -16,7 +16,7 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 
 ## Installation steps are -
 
-1. git clone repo
+1. git clone https://github.com/MisraSwarup45/ChartView.git
 2. npm install
 3. node app.js
 4. open localhost:3000
