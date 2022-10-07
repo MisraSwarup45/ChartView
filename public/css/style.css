@@ -169,7 +169,7 @@ footer li{
 }
 
 .icons{
-padding-left: 0px;
+  padding-left: 0px;
 }
 
 .icons a{
@@ -183,6 +183,11 @@ padding-left: 0px;
 .icons a:hover{
   color: #ffffff;
   transition: 0.5s;
+}
+
+.menu{
+  text-align: center;
+  padding-left: 0px;
 }
 
 .menu a{
