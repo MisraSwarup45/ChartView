@@ -43,6 +43,10 @@ app.get("/binance", function (req, res) {
     res.render("binance");
 });
 
+app.get("/chart", function(req, res){
+    res.render("chart");
+});
+
 app.post("/", function (req, res) {
     res.redirect("/");
 });
