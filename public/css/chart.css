@@ -1,0 +1,140 @@
+/* navbar */
+.background {
+    background-color: #001d3d;
+    width: 100%;
+}
+
+.fontPadding {
+    padding-right: 15px;
+    font-family: Josefin Sans, sans-serif;
+}
+
+.button-72 {
+    align-items: center;
+    background-color: #001d3d;
+    border-radius: 42px;
+    border-width: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    font-family: Josefin Sans, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: .04em;
+    line-height: 16px;
+    margin: 0;
+    padding: 18px 18px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+}
+
+.button-72:hover {
+    background-color: #001d3d;
+    border: 1px solid white;
+}
+
+@media (min-width: 768px) {
+    .button-72 {
+        font-size: 21px;
+        padding: 18px 34px;
+    }
+}
+
+
+/* footer */
+.foot {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+
+footer {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #001d3d;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 100px;
+    margin-top: auto;
+}
+
+footer li {
+    list-style: none;
+    margin: 10px;
+    display: inline-block;
+}
+
+.icons {
+    padding-left: 0px;
+}
+
+.icons a {
+    background: #003D7D;
+    color: #ffffff;
+    padding: 14px;
+    font-size: 20px;
+    border-radius: 100%;
+    display: flex;
+}
+
+.icons a:hover {
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.menu a {
+    color: #ffffff;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #003D7D;
+    transition: 0.5s;
+}
+
+.footer-copyright {
+    background-color: #003D7D;
+    color: #ffffff;
+    padding: 15px;
+    margin-top: 30px;
+    text-transform: capitalize;
+}
+
+.footer-copyright p {
+    margin-bottom: 0px;
+}
+
+
+.table{
+    background-color: #001d3d;
+    text-align: center;
+}
+
+th, td{
+    color: #FFFFFF;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+}
+
+.container-table{
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #001d3d;
+}
