@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MisraSwarup45/ChartView-1.git"
+    "url": "git+https://github.com/MisraSwarup45/ChartView.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MisraSwarup45/ChartView-1/issues"
+    "url": "https://github.com/MisraSwarup45/ChartView/issues"
   },
-  "homepage": "https://github.com/MisraSwarup45/ChartView-1#readme"
+  "homepage": "https://github.com/MisraSwarup45/ChartView#readme"
 }
