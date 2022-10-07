@@ -214,6 +214,11 @@ padding-left: 0px;
   transition: 0.5s;
 }
 
+.menu {
+  text-align: center;
+  padding-left: 0px;
+}
+
 .menu a{
   color: #ffffff;
   text-transform: capitalize;
