@@ -127,19 +127,25 @@ footer li {
 }
 
 
-.table{
+.table {
     background-color: #001d3d;
     text-align: center;
 }
 
-th, td{
+th,
+td {
     color: #FFFFFF;
     font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
 }
 
-.container-table{
+.container-table {
     padding-left: 5%;
     padding-right: 5%;
     background-color: #001d3d;
+}
+
+.coinicon {
+    height: 30px;
+    width: 30px;
 }
