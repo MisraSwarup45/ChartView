@@ -37,15 +37,16 @@
           <th>Gain/Loss</th>
           <th>Mkt Cap</th>
         </tr>
-        <% for(var i=0;i<100;i++){ %>
+        <%= size %>
+        <% for(var i=0;i<size;i++){ %>
         <tr>
-          <td>Value1</td>
-          <td>Value2</td>
-          <td>Value3</td>
-          <td>Value4</td>
-          <td>Value5</td>
-          <td>Value6</td>
-          <td>Value7</td>
+          <td><img src="<%=Value1%>" class="coinicon" alt="<%=Value2%>"></td>
+          <td><%=Value2%></td>
+          <td><%=Value3%></td>
+          <td><%=Value4%></td>
+          <td><%=Value5%></td>
+          <td><%=Value6%></td>
+          <td><%=Value7%></td>
         </tr>
         <%}%>
       </table>
