@@ -1,6 +1,6 @@
 # CHARTVIEW
 
-This project can show the live charts for crypto coins , thier high's and low's , buy sell vloume and other details that you might need.
+This project can show the live charts for crypto coins, their high's and low's, buy sell volume and other details that you might need. 
 
 ## Badges
 
