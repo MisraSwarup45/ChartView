@@ -29,25 +29,35 @@
     <div class="container-table">
       <table class="table">
         <tr>
+          <th>Rank</th>
           <th>Icon</th>
           <th>Coin</th>
           <th>Code</th>
           <th>Price</th>
-          <th>Current Value</th>
+          
           <th>Gain/Loss</th>
           <th>Mkt Cap</th>
         </tr>
-        <%= size %>
-        <% for(var i=0;i<size;i++){ %>
+        <% for(let i=0; i<gotCoin.length;i++){ %>
         <tr>
-          <td><img src="<%=Value1%>" class="coinicon" alt="<%=Value2%>"></td>
-          <td><%=Value2%></td>
-          <td><%=Value3%></td>
-          <td><%=Value4%></td>
-          <td><%=Value5%></td>
-          <td><%=Value6%></td>
-          <td><%=Value7%></td>
+          <td><%=gotCoin[i].market_cap_rank%></td>
+          <td><img src="<%=gotCoin[i].image%>" class="coinicon" alt="<%=gotCoin[i].name%>"></td>
+          <td><%=gotCoin[i].name%></td>
+          <td><%=gotCoin[i].symbol.toUpperCase();%></td>
+          <td><%=gotCoin[i].current_price%></td>
+
+          
+          <% if(gotCoin[i].price_change_percentage_24h < 0){ %>
+            <td class="red"><%=gotCoin[i].price_change_percentage_24h.toFixed(2)%> %</td>
+          <%}else{%>
+            <td class="green"><%=gotCoin[i].price_change_percentage_24h.toFixed(2)%> %</td>
+          <%}%>
+
+          
+          <td><%=gotCoin[i].market_cap%></td>
+          
         </tr>
+
         <%}%>
       </table>
     </div>
