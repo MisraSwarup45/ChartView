@@ -52,11 +52,9 @@ app.get("/chart", function(req, res){
         response.on("data", function(data){
             coinArray.push(data);
         });
-        console.log(coinArray);
         response.on("end", function(){
             const data = Buffer.concat(coinArray);
             let gotCoin = JSON.parse(data);
-            console.log(gotCoin.length);
             
 
             res.render("chart", {gotCoin : gotCoin} );
