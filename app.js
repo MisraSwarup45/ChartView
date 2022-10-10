@@ -47,7 +47,7 @@ app.get("/binance", function (req, res) {
 app.get("/chart", function(req, res){
 
 
-    https.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=5&page=1&sparkline=false", function(response){
+    https.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false", function(response){
         const coinArray = [];
         response.on("data", function(data){
             coinArray.push(data);
@@ -55,11 +55,11 @@ app.get("/chart", function(req, res){
         console.log(coinArray);
         response.on("end", function(){
             const data = Buffer.concat(coinArray);
-            let got = JSON.parse(data);
-            console.log(got.length);
-            // for(let i = 0; i<got.length;i++){
-            res.render("chart", {size : got.length, Value1 : got[0].image, Value2 : got[0].name, Value3 : got[0].symbol, Value4 : got[0].current_price, Value5 : got[0].high_24h, Value6 : got[0].price_change_percentage_24h, Value7 : got[0].market_cap} );
-            // }
+            let gotCoin = JSON.parse(data);
+            console.log(gotCoin.length);
+            
+
+            res.render("chart", {gotCoin : gotCoin} );
         });
     });
 
