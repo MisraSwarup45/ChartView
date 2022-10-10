@@ -52,11 +52,9 @@ app.get("/chart", function(req, res){
         response.on("data", function(data){
             coinArray.push(data);
         });
-        console.log(coinArray);
         response.on("end", function(){
             const data = Buffer.concat(coinArray);
             let gotCoin = JSON.parse(data);
-            console.log(gotCoin.length);
             
 
             res.render("chart", {gotCoin : gotCoin} );
@@ -70,6 +68,6 @@ app.post("/", function (req, res) {
     res.redirect("/");
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log("Server started at server 3000");
 })
