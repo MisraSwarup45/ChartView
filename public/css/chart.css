@@ -157,3 +157,23 @@ td {
 .green {
     color: #11d811;
 }
+
+/* search__bar */
+.search__div {
+    background-color: #001d3d;
+    display: flex;
+    justify-content: center;
+    font-family: Josefin Sans, sans-serif;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+/* .search__btn{
+    background-color: #ffff;
+    border-radius: .5rem;
+} */
+.search__bar{
+    width: 25rem;
+    border-radius: 1rem;
+    border: none;
+    height: 2.5rem;
+}
