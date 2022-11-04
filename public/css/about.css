@@ -1,0 +1,25 @@
+.about__body{
+    font-family: Josefin Sans, sans-serif;
+    background-color: #001d3d;
+}
+
+.about__title{
+    color: #ffffff;
+    padding-left: 5rem;
+}
+
+.about__line{
+    color: white;
+    width: 90%;
+    position: relative;
+    height: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+}
+
+.about__text{
+    color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+}
