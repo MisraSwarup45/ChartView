@@ -24,6 +24,10 @@ app.get("/contact", function (req, res) {
     res.render("contact");
 });
 
+app.get("/about", function (req, res) {
+    res.render("about");
+});
+
 app.get("/login", function (req, res) {
     res.render("login");
 });
