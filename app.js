@@ -56,10 +56,12 @@ app.get("/chart", function(req, res){
             const data = Buffer.concat(coinArray);
             let gotCoin = JSON.parse(data);
             
-
+            // console.log(gotCoin);
             res.render("chart", {gotCoin : gotCoin} );
         });
     });
+
+    
 
     
 });
