@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const https = require("https");
 
 
 const app = express();
@@ -21,6 +22,10 @@ app.get("/", function (req, res) {
 
 app.get("/contact", function (req, res) {
     res.render("contact");
+});
+
+app.get("/about", function (req, res) {
+    res.render("about");
 });
 
 app.get("/login", function (req, res) {
@@ -44,13 +49,31 @@ app.get("/binance", function (req, res) {
 });
 
 app.get("/chart", function(req, res){
-    res.render("chart");
+
+
+    https.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false", function(response){
+        const coinArray = [];
+        response.on("data", function(data){
+            coinArray.push(data);
+        });
+        response.on("end", function(){
+            const data = Buffer.concat(coinArray);
+            let gotCoin = JSON.parse(data);
+            
+            // console.log(gotCoin);
+            res.render("chart", {gotCoin : gotCoin} );
+        });
+    });
+
+    
+
+    
 });
 
 app.post("/", function (req, res) {
     res.redirect("/");
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log("Server started at server 3000");
 })

@@ -98,6 +98,11 @@ footer li {
     transition: 0.5s;
 }
 
+.menu {
+    text-align: center;
+    padding-left: 0px;
+}
+
 .menu a {
     color: #ffffff;
     text-transform: capitalize;
@@ -122,19 +127,68 @@ footer li {
 }
 
 
-.table{
+.table {
     background-color: #001d3d;
     text-align: center;
 }
 
-th, td{
+th,
+td {
     color: #FFFFFF;
     font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
 }
 
-.container-table{
+.container-table {
     padding-left: 5%;
     padding-right: 5%;
     background-color: #001d3d;
+}
+
+.coinicon {
+    height: 30px;
+    width: 30px;
+}
+
+.red {
+    color: #f00606;
+}
+
+.green {
+    color: #11d811;
+}
+
+/* search__bar */
+.search__div {
+    background-color: #001d3d;
+    display: flex;
+    justify-content: center;
+    font-family: Josefin Sans, sans-serif;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+/* .search__btn{
+    background-color: #ffff;
+    border-radius: .5rem;
+} */
+.search__bar{
+    width: 25rem;
+    border-radius: 1rem;
+    border: none;
+    height: 2.5rem;
+}
+
+::-webkit-scrollbar {
+    width: .60rem;
+    background-color: #001d3d;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #001d3d;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #003D7D;
 }

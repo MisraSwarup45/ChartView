@@ -73,18 +73,30 @@ body {
 }
 
 .img1 {
-  left: 22px;
-  top: 164px;
-  width: 340px;
+  left: -16px;
+  top: 144px;
+  width: 466px;
 }
 
 .img2 {
-  left: -46px;
-  top: 174px;
-  width: 444px;
+  left: -45px;
+  top: 127px;
+  width: 500px;
 }
 
 .img3 {
+  left: -16px;
+  top: 144px;
+  width: 466px;
+}
+
+.img4 {
+  left: -16px;
+  top: 144px;
+  width: 466px;
+}
+
+.img5 {
   left: -16px;
   top: 144px;
   width: 466px;
@@ -214,6 +226,11 @@ padding-left: 0px;
   transition: 0.5s;
 }
 
+.menu {
+  text-align: center;
+  padding-left: 0px;
+}
+
 .menu a{
   color: #ffffff;
   text-transform: capitalize;
@@ -233,4 +250,19 @@ padding-left: 0px;
 
 .footer-copyright p{
   margin-bottom: 0px;
+}
+
+::-webkit-scrollbar {
+  width: .60rem;
+  background-color: #001d3d;
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #001d3d;
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #003D7D;
 }
