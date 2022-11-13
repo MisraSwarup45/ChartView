@@ -251,3 +251,18 @@ padding-left: 0px;
 .footer-copyright p{
   margin-bottom: 0px;
 }
+
+::-webkit-scrollbar {
+  width: .60rem;
+  background-color: #001d3d;
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #001d3d;
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #003D7D;
+}
