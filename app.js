@@ -49,6 +49,7 @@ app.get("/binance", function (req, res) {
 });
 
 app.get("/chart", function(req, res){
+    console.log(req.body.coin);
 
 
     https.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false", function(response){
@@ -64,6 +65,8 @@ app.get("/chart", function(req, res){
             res.render("chart", {gotCoin : gotCoin} );
         });
     });
+
+    
 
     
 
