@@ -79,27 +79,27 @@ body {
 }
 
 .img2 {
+  left: -10px;
+  top: 150px;
+  width: 430px;
+}
+
+.img3 {
   left: -45px;
   top: 127px;
   width: 500px;
 }
 
-.img3 {
-  left: -16px;
-  top: 144px;
-  width: 466px;
-}
-
 .img4 {
-  left: -16px;
-  top: 144px;
-  width: 466px;
+  left: -90px;
+  top: 100px;
+  width: 600px;
 }
 
 .img5 {
-  left: -16px;
-  top: 144px;
-  width: 466px;
+  left: -165px;
+  top: 20px;
+  width: 750px;
 }
 
 .divider {
