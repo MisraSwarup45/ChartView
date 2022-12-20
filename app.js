@@ -38,47 +38,47 @@ const User = new mongoose.model("User", userSchema);
 let logName = false;
 
 app.get("/", function (req, res) {
-    res.render("content", { label: "Swarup" });
+    res.render("content", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/contact", function (req, res) {
-    res.render("contact", { label: "Swarup" });
+    res.render("contact", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/navbar", function (req, res) {
-    res.render("navbar", { label: "Swarup" });
+    res.render("navbar", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/about", function (req, res) {
-    res.render("about", { label: "Swarup" });
+    res.render("about", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/signup", function (req, res) {
-    res.render("signup", { label: "Swarup" });
+    res.render("signup", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/login", function (req, res) {
-    res.render("login", { label: "Swarup" });
+    res.render("login", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/bitcoin", function (req, res) {
-    res.render("bitcoin", { label: "Swarup" });
+    res.render("bitcoin", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/etherium", function (req, res) {
-    res.render("etherium", { label: "Swarup" });
+    res.render("etherium", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/tether", function (req, res) {
-    res.render("tether", { label: "Swarup" });
+    res.render("tether", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/binance", function (req, res) {
-    res.render("binance", { label: "Swarup" });
+    res.render("binance", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/errorpage", function (req, res) {
-    res.render("errorpage", { label: "Swarup" });
+    res.render("errorpage", { label: logName ? "Swarup" : "Get Started" });
 });
 
 app.get("/chart", function (req, res) {
@@ -95,7 +95,7 @@ app.get("/chart", function (req, res) {
             let gotCoin = JSON.parse(data);
 
             // console.log(gotCoin);
-            res.render("chart", { gotCoin: gotCoin, label: "Swarup" });
+            res.render("chart", { gotCoin: gotCoin, label: logName ? "Swarup" : "Get Started" });
         });
     });
 
@@ -120,7 +120,7 @@ app.post("/signup", (req, res) => {
         }
         else {
             logName = true;
-            res.render("content", { label: "Swarup" });
+            res.render("content", { label: logName ? "Swarup" : "Get Started" });
         }
     });
 });
@@ -138,7 +138,7 @@ app.post("/login", (req, res) => {
             if (foundUser) {
                 if (foundUser.password === password) {
                     logName = true;
-                    res.render("content", { label: "Swarup" });
+                    res.render("content", { label: logName ? "Swarup" : "Get Started" });
                 }
                 else {
                     res.render("errorpage");
