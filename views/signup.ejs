@@ -57,6 +57,7 @@
                     </p>
                 </div> -->
                 <br>
+                <%if(!headName){%>
                     <div class="col">
                         <h2 style="text-align: center;"><b>CHART VIEW</b></h2>
                     </div>
@@ -86,6 +87,11 @@
                         </div>
 
                     </form>
+                    <%}else{%>
+                        <div class="col">
+                            <h2 style="text-align: center;"><b>Hi, <%=label%></b></h2>
+                        </div>
+                    <%}%>
                     <!-- <div class="striped">
                     <span class="striped-line"></span>
                     <span class="striped-text">Or</span>

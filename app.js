@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'Logos')));
 app.use(express.static(path.join(__dirname, 'background')));
 
-mongoose.connect("mongodb://127.0.0.1:27017/userDB", { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.5nu8yr2.mongodb.net/userDB`, { useNewUrlParser: true });
 
 const userSchema = new mongoose.Schema({
     name: String,
@@ -59,11 +59,11 @@ app.get("/about", function (req, res) {
 });
 
 app.get("/signup", function (req, res) {
-    res.render("signup", { label: logName ? username : "Get Started" });
+    res.render("signup", { label: logName ? username : "Get Started", headName: logName });
 });
 
 app.get("/login", function (req, res) {
-    res.render("login", { label: logName ? username : "Get Started" });
+    res.render("login", { label: logName ? username : "Get Started", headName: logName  });
 });
 
 app.get("/bitcoin", function (req, res) {
@@ -145,7 +145,7 @@ app.post("/login", (req, res) => {
                 if (foundUser.password === password) {
                     logName = true;
                     username = req.body.name;
-                    res.render("content", { label: logName ? username : "Get Started" });
+                    res.render("content", { label: logName ? username : "Get Started", headName: logName });
                 }
                 else {
                     res.render("errorpage");
