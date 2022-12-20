@@ -35,44 +35,50 @@ userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password'] });
 
 const User = new mongoose.model("User", userSchema);
 
+let logName = false;
+
 app.get("/", function (req, res) {
-    res.render("content");
+    res.render("content", { label: "Swarup" });
 });
 
 app.get("/contact", function (req, res) {
-    res.render("contact");
+    res.render("contact", { label: "Swarup" });
+});
+
+app.get("/navbar", function (req, res) {
+    res.render("navbar", { label: "Swarup" });
 });
 
 app.get("/about", function (req, res) {
-    res.render("about");
+    res.render("about", { label: "Swarup" });
 });
 
 app.get("/signup", function (req, res) {
-    res.render("signup");
+    res.render("signup", { label: "Swarup" });
 });
 
 app.get("/login", function (req, res) {
-    res.render("login");
+    res.render("login", { label: "Swarup" });
 });
 
 app.get("/bitcoin", function (req, res) {
-    res.render("bitcoin");
+    res.render("bitcoin", { label: "Swarup" });
 });
 
 app.get("/etherium", function (req, res) {
-    res.render("etherium");
+    res.render("etherium", { label: "Swarup" });
 });
 
 app.get("/tether", function (req, res) {
-    res.render("tether");
+    res.render("tether", { label: "Swarup" });
 });
 
 app.get("/binance", function (req, res) {
-    res.render("binance");
+    res.render("binance", { label: "Swarup" });
 });
 
 app.get("/errorpage", function (req, res) {
-    res.render("errorpage");
+    res.render("errorpage", { label: "Swarup" });
 });
 
 app.get("/chart", function (req, res) {
@@ -89,7 +95,7 @@ app.get("/chart", function (req, res) {
             let gotCoin = JSON.parse(data);
 
             // console.log(gotCoin);
-            res.render("chart", { gotCoin: gotCoin });
+            res.render("chart", { gotCoin: gotCoin, label: "Swarup" });
         });
     });
 
@@ -113,7 +119,8 @@ app.post("/signup", (req, res) => {
             console.log(err);
         }
         else {
-            res.render("content");
+            logName = true;
+            res.render("content", { label: "Swarup" });
         }
     });
 });
@@ -130,7 +137,8 @@ app.post("/login", (req, res) => {
         else {
             if (foundUser) {
                 if (foundUser.password === password) {
-                    res.render("content");
+                    logName = true;
+                    res.render("content", { label: "Swarup" });
                 }
                 else {
                     res.render("errorpage");

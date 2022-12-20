@@ -1,7 +1,34 @@
 <%- include("header") -%>
-<%- include("navbar") -%>
-  <div
-    style="
+  <nav class="navbar navbar-expand-lg navbar-dark background">
+    <div class="container-fluid">
+      <a class="navbar-brand fontPadding" href="/">
+        <img src="CV_Logo.png" height="70px" width="100px" alt="CV_Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item fontPadding">
+            <a style="font-size: 23px" class="font nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item fontPadding">
+            <a style="font-size: 23px" class="font nav-link" href="about">About</a>
+          </li>
+          <li class="nav-item fontPadding">
+            <a style="font-size: 23px" class="font nav-link" href="contact" tabindex="-1"
+              aria-disabled="false">Contact</a>
+          </li>
+        </ul>
+        <a href="login" style="text-decoration: none;"><button class="button-72">
+            <%=label%>
+          </button></a>
+      </div>
+    </div>
+  </nav>
+  <div style="
       height: 62px;
       background-color: #001d3d;
       overflow: hidden;
@@ -19,54 +46,56 @@
       padding: 0px;
       margin: 0px;
       width: 100%;
-    "
-  >
+    ">
     <div style="height: 40px; padding: 0px; margin: 0px; width: 100%">
-      <iframe
-        src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover="
-        width="100%"
-        height="36px"
-        scrolling="none"
-        marginwidth="0"
-        marginheight="0"
-        frameborder="0"
-        border="0"
-        style="border: 0; margin: 0; padding: 0"
-      ></iframe>
+      <iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover="
+        width="100%" height="36px" scrolling="none" marginwidth="0" marginheight="0" frameborder="0" border="0"
+        style="border: 0; margin: 0; padding: 0"></iframe>
     </div>
   </div>
   <div id="image">
     <img src="ChartView.png" class="center" alt="Logo" />
   </div>
 
-  
+
   <table class="image container">
     <tr>
-      <th> 
-        <input type="image" src="Bitcoin.png" class="radius" name="bitcoin" alt="crypto" onclick="window.location.href='bitcoin'"/>
+      <th>
+        <input type="image" src="Bitcoin.png" class="radius" name="bitcoin" alt="crypto"
+          onclick="window.location.href='bitcoin'" />
       </th>
       <th>
-        <input type="image" src="Etherium.png" class="radius" name="etherium" alt="crypto" onclick="window.location.href='etherium'" />
+        <input type="image" src="Etherium.png" class="radius" name="etherium" alt="crypto"
+          onclick="window.location.href='etherium'" />
       </th>
       <th>
-        <input type="image" src="Tether.png" class="radius" name="tether" alt="crypto" onclick="window.location.href='tether'" />
+        <input type="image" src="Tether.png" class="radius" name="tether" alt="crypto"
+          onclick="window.location.href='tether'" />
       </th>
       <th>
-        <input type="image" src="Binance Logo.svg" class="radius" name="binance" alt="crypto" onclick="window.location.href='binance'" />
+        <input type="image" src="Binance Logo.svg" class="radius" name="binance" alt="crypto"
+          onclick="window.location.href='binance'" />
       </th>
     </tr>
     <tr>
-      <td class="col"><h3>Bitcoin</h3></td>
-      <td class="col"><h3>Etherium</h3></td>
-      <td class="col"><h3>Tether</h3></td>
-      <td class="col"><h3>Binance</h3></td>
+      <td class="col">
+        <h3>Bitcoin</h3>
+      </td>
+      <td class="col">
+        <h3>Etherium</h3>
+      </td>
+      <td class="col">
+        <h3>Tether</h3>
+      </td>
+      <td class="col">
+        <h3>Binance</h3>
+      </td>
     </tr>
   </table>
   <div class="ViewChart">
     <button class="button-85 font" role="button" onclick="window.location.href='chart'">View Chart</button>
   </div>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
-<%- include("footer") -%>
+  <%- include("footer") -%>

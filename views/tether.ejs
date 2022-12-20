@@ -2,29 +2,57 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tether</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/Contact.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap"
-        rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tether</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/Contact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body style="background-color: #001d3d;">
-    <%- include("navbar") -%>
-        <div style="height:540px; padding:0px; margin:0px; width: 100%;"><iframe
-                src="https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id=637&pref_coin_id=1530" width="100%"
-                height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
-                style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-            crossorigin="anonymous"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark background">
+    <div class="container-fluid">
+      <a class="navbar-brand fontPadding" href="/">
+        <img src="CV_Logo.png" height="70px" width="100px" alt="CV_Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item fontPadding">
+            <a style="font-size: 23px" class="font nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item fontPadding">
+            <a style="font-size: 23px" class="font nav-link" href="about">About</a>
+          </li>
+          <li class="nav-item fontPadding">
+            <a style="font-size: 23px" class="font nav-link" href="contact" tabindex="-1"
+              aria-disabled="false">Contact</a>
+          </li>
+        </ul>
+        <a href="login" style="text-decoration: none;"><button class="button-72">
+            <%=label%>
+          </button></a>
+      </div>
+    </div>
+  </nav>
+  <div style="height:540px; padding:0px; margin:0px; width: 100%;"><iframe
+      src="https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id=637&pref_coin_id=1530" width="100%"
+      height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+      style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
 
 </body>
 
