@@ -10,6 +10,8 @@ const mongoose = require("mongoose");
 const encrypt = require("mongoose-encryption");
 const { urlencoded } = require("body-parser");
 const { log } = require("console");
+const { resolveSoa } = require('dns');
+const axios = require('axios');
 
 
 const app = express();
@@ -63,7 +65,7 @@ app.get("/signup", function (req, res) {
 });
 
 app.get("/login", function (req, res) {
-    res.render("login", { label: logName ? username : "Get Started", headName: logName  });
+    res.render("login", { label: logName ? username : "Get Started", headName: logName });
 });
 
 app.get("/bitcoin", function (req, res) {
@@ -86,31 +88,18 @@ app.get("/errorpage", function (req, res) {
     res.render("errorpage", { label: logName ? username : "Get Started" });
 });
 
-app.get("/chart", function (req, res) {
-    console.log(req.body.coin);
 
-
-    https.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false", function (response) {
-        const coinArray = [];
-        response.on("data", function (data) {
-            coinArray.push(data);
+app.get("/chart", (req, res) => {
+    axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en")
+        .then(function (response) {
+            const coinData = response.data;
+            res.render("chart", { label: logName ? username : "Get Started", gotCoin: coinData });
+        })
+        .catch(function (error) {
+            console.error("Error retrieving data from API:", error);
+            res.render("errorpage");
         });
-        response.on("end", function () {
-            const data = Buffer.concat(coinArray);
-            let gotCoin = JSON.parse(data);
-
-            // console.log(gotCoin);
-            res.render("chart", { gotCoin: gotCoin, label: logName ? username : "Get Started" });
-        });
-    });
-
-
-
-
-
-
 });
-
 
 app.post("/signup", (req, res) => {
     const newUser = new User({
@@ -122,8 +111,8 @@ app.post("/signup", (req, res) => {
     newUser.save((err) => {
         if (err) {
             console.log(err);
-        }
-        else {
+            res.render("errorpage");
+        } else {
             logName = true;
             username = req.body.name;
             res.render("content", { label: logName ? username : "Get Started" });
@@ -132,36 +121,29 @@ app.post("/signup", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-    const name = req.body.name;
     const username = req.body.email;
     const password = req.body.password;
 
     User.findOne({ email: username }, (err, foundUser) => {
         if (err) {
             console.log(err);
-        }
-        else {
-            if (foundUser) {
-                if (foundUser.password === password) {
-                    logName = true;
-                    username = req.body.name;
-                    res.render("content", { label: logName ? username : "Get Started", headName: logName });
-                }
-                else {
-                    res.render("errorpage");
-                }
-            }
-            else {
+            res.render("errorpage");
+        } else {
+            if (foundUser && foundUser.password === password) {
+                logName = true;
+                username = req.body.email;
+                res.render("content", { label: logName ? username : "Get Started", headName: logName });
+            } else {
                 res.render("errorpage");
             }
         }
     });
 });
 
-app.post("/", function (req, res) {
+app.post("/", (req, res) => {
     res.redirect("/");
 });
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 4000, function () {
     console.log("Server started at server 3000");
-})
+});
