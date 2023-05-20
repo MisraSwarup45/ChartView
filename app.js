@@ -43,101 +43,99 @@ const User = new mongoose.model("User", userSchema);
 let logName = false;
 let username = "";
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
     // console.log(process.env.SECRET);
     res.render("content", { label: logName ? username : "Get Started" });
 });
 
-app.get("/contact", function (req, res) {
+app.get("/contact", (req, res) => {
     res.render("contact", { label: logName ? username : "Get Started" });
 });
 
-app.get("/navbar", function (req, res) {
+app.get("/navbar", (req, res) => {
     res.render("navbar", { label: logName ? username : "Get Started" });
 });
 
-app.get("/about", function (req, res) {
+app.get("/about", (req, res) => {
     res.render("about", { label: logName ? username : "Get Started" });
 });
 
-app.get("/signup", function (req, res) {
+app.get("/signup", (req, res) => {
     res.render("signup", { label: logName ? username : "Get Started", headName: logName });
 });
 
-app.get("/login", function (req, res) {
+app.get("/login", (req, res) => {
     res.render("login", { label: logName ? username : "Get Started", headName: logName });
 });
 
-app.get("/bitcoin", function (req, res) {
+app.get("/bitcoin", (req, res) => {
     res.render("bitcoin", { label: logName ? username : "Get Started" });
 });
 
-app.get("/etherium", function (req, res) {
+app.get("/etherium", (req, res) => {
     res.render("etherium", { label: logName ? username : "Get Started" });
 });
 
-app.get("/tether", function (req, res) {
+app.get("/tether", (req, res) => {
     res.render("tether", { label: logName ? username : "Get Started" });
 });
 
-app.get("/binance", function (req, res) {
+app.get("/binance", (req, res) => {
     res.render("binance", { label: logName ? username : "Get Started" });
 });
 
-app.get("/errorpage", function (req, res) {
+app.get("/errorpage", (req, res) => {
     res.render("errorpage", { label: logName ? username : "Get Started" });
 });
 
 
-app.get("/chart", (req, res) => {
-    axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en")
-        .then(function (response) {
-            const coinData = response.data;
-            res.render("chart", { label: logName ? username : "Get Started", gotCoin: coinData });
-        })
-        .catch(function (error) {
-            console.error("Error retrieving data from API:", error);
-            res.render("errorpage");
-        });
+
+app.get("/chart", async (req, res) => {
+    try {
+        const response = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en");
+        const coinData = response.data;
+        res.render("chart", { label: logName ? username : "Get Started", gotCoin: coinData });
+    } catch (error) {
+        console.error("Error retrieving data from API:", error);
+        res.render("errorpage");
+    }
 });
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
     const newUser = new User({
         name: req.body.name,
         email: req.body.email,
         password: req.body.password
     });
 
-    newUser.save((err) => {
-        if (err) {
-            console.log(err);
-            res.render("errorpage");
-        } else {
-            logName = true;
-            username = req.body.name;
-            res.render("content", { label: logName ? username : "Get Started" });
-        }
-    });
+    try {
+        await promisify(newUser.save.bind(newUser))();
+        logName = true;
+        username = req.body.name;
+        res.render("content", { label: logName ? username : "Get Started" });
+    } catch (error) {
+        console.log(error);
+        res.render("errorpage");
+    }
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
     const username = req.body.email;
     const password = req.body.password;
 
-    User.findOne({ email: username }, (err, foundUser) => {
-        if (err) {
-            console.log(err);
-            res.render("errorpage");
+    try {
+        const foundUser = await User.findOne({ email: username });
+        if (foundUser && foundUser.password === password) {
+            logName = true;
+            username = req.body.email;
+            res.render("content", { label: logName ? username : "Get Started", headName: logName });
         } else {
-            if (foundUser && foundUser.password === password) {
-                logName = true;
-                username = req.body.email;
-                res.render("content", { label: logName ? username : "Get Started", headName: logName });
-            } else {
-                res.render("errorpage");
-            }
+            res.render("errorpage");
         }
-    });
+    } catch (error) {
+        console.log(error);
+        res.render("errorpage");
+    }
 });
 
 app.post("/", (req, res) => {
@@ -145,5 +143,5 @@ app.post("/", (req, res) => {
 });
 
 app.listen(process.env.PORT || 4000, function () {
-    console.log("Server started at server 3000");
+    console.log("Server started at server 4000");
 });
